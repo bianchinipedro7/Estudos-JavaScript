@@ -175,3 +175,118 @@ console.log(fruits); // ['blueberry', 'grape', 'lemon']
 // - Representar conceitos de domínio da aplicação (clientes, produtos, pedidos, etc)
 
 // Criando e Acessando Objetos
+
+// Em JavaScript, um objeto é criado usando chaves {} e consiste em palavras de chave-valor, onde as chaves são strings ou identificadores e os valores podem ser quaisquer tipos de dados.
+// Exemplo: 
+
+const pessoa = {
+    nome: 'Pedro',
+    idade: 23,
+    altura: 1.75,
+};
+
+// Acessando propriedades de um objeto
+console.log (pessoa.nome) // Pedro
+console.log (pessoa.idade) // 23
+console.log (pessoa.altura) // 1.75
+
+// Existem duas maneiras de acessarmos propriedades:
+// 1) Notação de ponto (objeto.propriedade): Mais limpa e direta quando você conhece o nome da proproiedade
+// 2) Notação em colchetes (objeto.['propriedade']): Útil quando o nome da propriedade está em uma variável ou contém caracteres especiais
+
+// Objetos Aninhados (Nested Objects)
+// Objetos podem conter outros objetos como valores, criando estruturas hierarquicas de dados
+//Exemplo:
+
+// Objeto com outro objeto dentro
+const account = {
+    agency: '0975',
+    bank : {
+        cod: 2128-8,
+        id: 23,
+        title: 'TyreBank',
+    },
+};
+
+// Acessando objetos aninhados
+
+console.log (account.bank)  // { cod: '2128-8', id: 23, name: 'TrybeBank' }
+console.log (account['bank']); // { cod: '2128-8', id: 23, name: 'TrybeBank' }
+console.log (bank); // { cod: '2128-8', id: 23, name: 'TrybeBank' }
+
+// Objetos com múltiplos níveis
+// Podemos ter vários níveis de aninhamento para representar estruturas de dados complexas
+// Exemplo:
+
+const user = {
+    id: 99,
+    email: 'jakeperalta@gmail.com',
+    info: {
+        name: 'Jake',
+        lastName: 'Peralta',
+        address: {
+            street: 'Rua Dalvo Trombeta, 357 - Fundos',
+            district: 'Xererê',
+            city: 'Santana do Livramento',
+            state: 'Rio Grande do Norte',
+        },
+    },
+};
+
+// Diferentes formas de acessar as propriedades
+
+console.log (user['id']); // 99
+console.log (user.email); // jakeperalta@gmail.com
+console.log (user.info.address.street); // Rua Dalvo Trombeta, 357 - Fundos
+console.log (user['info']['address']['city']); // Santana do Livramento
+
+// Objetos dentro de Arrays
+// Arrays podem conter objetos, permitindo armazenar coleções de entidades semelhantes
+// Exemplo:
+
+const residents = [
+    {
+        name: 'Luíza',
+        lastName: 'Guimarães',
+        floor: 10,
+        apartment: 1005,
+    },
+    {
+        name: 'William',
+        lastName: 'Albuquerque',
+        floor: 5,
+        apartment: 502,
+    },
+    {
+        name: 'Murilo',
+        lastName: 'Ferraz',
+        floor: 8,
+        apartment: 804,
+    },
+    {
+        name: 'Zoey',
+        lastName: 'Brooks',
+        floor: 1,
+        apartment: 101,
+    },
+];
+
+// Acessando objetos no array
+// Primeiro elemento:
+firstElement = residents[0];
+console.log(residents[0]);  // { name: 'Luíza', lastName: 'Guimarães', floor: 10, apartment: 1005 }
+
+// Último elemento:
+lastElement = residents[residents.length - 1];
+console.log(residents[residents.length - 1]);  // { name: 'Zoey', lastName: 'Brooks', floor: 1, apartment: 101 }
+
+// Iterando sobre array de objetos
+for (let index = 0; index < residents.length; index++) {
+    const element = residents[index];
+    console.log(element);
+}
+
+// Arrays são ideia para:
+// - Lista de usuários, produtos ou entidades similares
+// - Dados tabulares como resultados de consultas bancos de dados
+// - Coleções de itens com 
