@@ -464,3 +464,51 @@ console.log(natal);
 // getSeconds(): segundos atuais
 // toLocaleDateString(): retorna a data formatada para o idioma
 // toLocaleTimeString(): retorna a hora formatada para o idioma
+
+// Função
+// Bloco de código que ser repete
+// Exemplo (Média de Notas)
+
+function calcularMedia (nota1, nota2) {
+    console.log((nota1 + nota2) / 2)
+}
+calcularMedia(5, 7)
+calcularMedia(3, 8)
+
+// Outra forma de escrever uma função
+
+const calcMedia = (nota1, nota2) => {
+    console.log((nota1 + nota2) / 2)
+}
+
+// Arrow Function
+() => {
+
+}
+
+// Funcion
+function x () {
+
+}
+
+// Método Map
+// O método map é um método para se utilizar com tipos de dados arrays que vai te retornar um novo array
+// Exemplo:
+
+[2, 5, 10, 12, 20, 50, 100].map((numero) => {numero * 2}) // Faz um novo array com os números multiplicados por 2
+
+// Método Filtro
+// Este método filtra os diferentes valores dentro do array por um parâmetro que será criado por mim
+// Exemplo:
+
+[2, 5, 10, 12, 20, 50, 100].filter((numero) => {numero < 50}) // Irá filtrar os números menores que 50
+
+// Método Reduce
+// Este método recebe uma lista e a reduz a um número dependendo do parâmetro determinado
+// Exemplo:
+
+[1000, 500, 3000, 15000, 475].reduce((a, b) => a + b, 0) // Este reduce irá fazer o a passar pela lista e o b ser a acumulação dos valores conforme o a for lendo a lista. e també, o valor depois da vírgula do b é o valor dele
+
+// OBS: As pessoas não usam as chaves após o arrow da arrow function, então será melhor não usar também
+
+ 

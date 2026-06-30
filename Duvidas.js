@@ -93,4 +93,4 @@ const addProperty = (object, key, value) => {
 // DICA: Use .toLowerCase() quando quiser comparar strings sem se preocupar com letras maiúsculas/minúsculas. Como assim? Tem alguma diferença estar maiúsculo ou minúsculo?
 // CUIDADO: Strings são imutáveis, ou seja, os métodos não alteram o valor original. Como assim?
 
-console.log(parseFloat("10.5")); // 10.5 // Já esta escrito 10.5, não era pra converter string em number? Tipo ten and a half?
+console.log(parseFloat("10.5")); // Irá retornar 10.5 Já esta escrito 10.5, não era pra converter string em number? Tipo ten and a half?
