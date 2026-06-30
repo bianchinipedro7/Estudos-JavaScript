@@ -53,12 +53,12 @@ const residents = [
 
 // Acessando objetos no array
 // Primeiro elemento:
-firstElement = residents[0]; // <----- duvida
+const firstElement = residents[0]; // <----- duvida OK O first element é o primeiro objeto do array
 console.log(residents[0]);  // { name: 'Luíza', lastName: 'Guimarães', floor: 10, apartment: 1005 }
 
 // Último elemento:
-lastElement = residents[residents.length - 1];
-console.log(residents[residents.length - 1]);  // { name: 'Zoey', lastName: 'Brooks', floor: 1, apartment: 101 }
+const lastElement = residents[residents.length - 1];
+console.log(residents[residents.length - 1]);  // { name: 'Zoey', lastName: 'Brooks', floor: 1, apartment: 101 } // OK pois o length mostra a quantidade total, porém a posição é iniciada do 0
 
 // Iterando sobre array de objetos
 for (let index = 0; index < residents.length; index++) {
@@ -66,6 +66,31 @@ for (let index = 0; index < residents.length; index++) {
     console.log(element);
 }
 
-// Arrays são ideia para:
+// Dentro do for, existem 3 parâmetros obrigatórios
+// Início: Da onde o for irá partir (no exemplo irá partir do zero)
+// Fim: Até onde ele vai (no exemplo irá até o último elemento do array)
+// Como / Meio: Como irá passar por cada elemento (no exemplo irá passar de 1 em 1)
+
+// OBS: For of é sempre usado para contagem do primeiro ao último elemento, se limitando à isso. 
+
+// Arrays em objetos são ideais para:
 // - Lista de usuários, produtos ou entidades similares
-// - Dados tabulares como resultados de consultas bancos de dados // resultados de consultas?
+// - Dados tabulares como resultados de consultas bancos de dados // resultados de consultas? OK
+
+// Criação da função
+const addProperty = (object, key, value) => {
+    if (typeof object[key] === "undefined") {
+        object[key] = value;
+    }
+}; // Explicar a sintaxe disso
+
+// Funções como esta são úteis quando:
+// - Precisamos aplicar a mesma lógica para modificar vários objetos
+// - Queremos validações antes de adicionar propriedades
+// - Estamos encapsulando a lógica de modificação para tornar o código mais limpo 
+// Exemplo destas razões para esclarecer melhor
+
+// DICA: Use .toLowerCase() quando quiser comparar strings sem se preocupar com letras maiúsculas/minúsculas. Como assim? Tem alguma diferença estar maiúsculo ou minúsculo?
+// CUIDADO: Strings são imutáveis, ou seja, os métodos não alteram o valor original. Como assim?
+
+console.log(parseFloat("10.5")); // 10.5 // Já esta escrito 10.5, não era pra converter string em number? Tipo ten and a half?
