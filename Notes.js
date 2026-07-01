@@ -511,4 +511,48 @@ function x () {
 
 // OBS: As pessoas não usam as chaves após o arrow da arrow function, então será melhor não usar também
 
- 
+// ARRAYS E LOOPS
+// O que são Loops? Laços de repetição são estruturas que permitem executar um bloco de código cárias vezes e de forma automática, evitando a repetição do código manualmente e tornando-o mains limpo e eficiente
+// Porque usar loops?
+// - Automatizam tarefas repetitivas
+// - Facilitam o processamento de listas e coleções
+// - Tornam o código mais enxuto e fácil de manter
+// Exemplo simples (contagem de 1 a 10):
+
+for (let i = 1; i <= 10; i++) {
+    console.log(i)
+}
+
+// TIPOS DE LOOPS
+
+// Loop FOR
+// Estrutura mais tradicional de repetições controladas
+// Ideal para quando você sabe o número de repetições
+// Exemplo:
+
+for (let index = 0; index < array.length; index++) {
+    //código a ser repetido
+}
+
+// Loop FOR OF
+// Percorre valores de arrays, strings e coleções iteráveis
+// Simples para acessar cada elemento
+// Exemplo:
+
+const frutas = ['abacaxi', 'uva', 'banana']
+for (const fruta of frutas) { // fruta é o nome que foi dado para os itens dentro do array, poderia ser nomeado qualquer coisa
+    console.log(frutas) // irá imprimir [abacaxi, uva, banana]
+}
+
+// Loop FOR IN
+// Percorre chaves '{}' (índices ou propriedades) de objetos e arrays
+// Útil para objetos
+// Exemplo:
+
+const pessoa = { 
+    nome: 'Pedro',
+    idade: 23
+};
+for (const chave in pessoa) {
+   console.log(chave)
+}
