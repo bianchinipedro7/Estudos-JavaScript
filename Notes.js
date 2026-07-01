@@ -556,3 +556,15 @@ const pessoa = {
 for (const chave in pessoa) {
    console.log(chave)
 }
+
+// Função Simples
+
+function somar(a, b) {
+    return (a + b)
+} // Linhas 562 a 564 são a declaração da função, como tem retorno os valores da soma serão guardados. Aqui se tivesse 2 console.logs iria imprimir o resultado das instãncias x e y, mas lá em baixo nos outros 3 consoles iria imprimir undefined pois não tem return na função então o programa não guarda os valores nas variáveis
+const x = somar (4, 5)
+const y = somar (10,20) // Linhas 565 e 566 foi o instânciamento da função
+
+console.log(x) 
+console.log(x)
+console.log(y) // Linhas 568 a 570 foi a impressão da instância
