@@ -1,0 +1,1065 @@
+# NOTES JAVASCRIPT
+
+## TIPOS DE DADOS
+
+- 01 - Number: Valores Numéricos
+- 02 - String: Texto entre aspas '' ou ""
+- 03 - Boolean: True or False
+- 04 - Function: Bloco de código que executa uma tarefa
+- 05 - Object: Coleções de propriedades representando uma entidade
+- 06 - Undefined: Valor indefinido (variável declarada sem valor)
+- 07 - Null: Valor intencionalmente inexistente
+
+Exemplos:
+
+```js
+idade = 30; // number
+nome = "Pedro"; // string
+reprovado = false; // boolean
+pesssoa = { nome: "Henrique", age: 23 }; // object
+listaNumerica = [1, 2, 3, 4, 5, 6, 7, 8, 9] // array
+nada = null; // null
+indefinido; // undefined
+function wassup() { return "Wassup, G" } // function
+```
+
+OBS: Em JavaScript sempre usamos a camelCase para nomear variáveis e funções, evitando usar acentos e caracteres especiais
+
+## Tipos de declaração
+
+```js
+var nome = 'Pedro';
+let nomeDois = 'Henrique';
+const nomeTres = 'Campos'
+```
+
+- var: visível em toda função globalmente
+- let: visível apenas no bloco em que foi declarada
+- const: igual ao let, mas o valor não pode ser alterado
+
+### Exemplo de declaração e exibição
+
+```js
+p = 'Pedro';
+let admin = 'admin@email.com'
+const usuario = 'admin123'
+
+console.log(p, admin, usuario)
+console.log(p)
+console.log(admin)
+console.log(usuario)
+```
+
+## Tipos com typeof
+
+Este operador retorna o tipo de uma variável
+
+Exemplo:
+
+```js
+fullName = 'Pedro Henrique Campos Bianchini';
+birthCity = 'Cuiabá';
+birthYear = 2003;
+
+console.log(fullName, birthCity, birthYear);
+```
+
+## Operações Aritméticas
+
+- Soma: +
+- Subtração: -
+- Multiplicação: *
+- Divisão: /
+- Módulo (resto da divisão): %
+
+```js
+console.log(9 + 10);
+console.log(76 - 9);
+console.log(10 * 10);
+console.log(25 / 5);
+console.log(10 / 3);
+```
+
+## Incremento e Decremento
+
+```js
+let number1 = 20
+number += 2 // Incrementa 2 ao número
+number -= 2 // Decrementa 2 do número
+
+console.log(number1) //irá printar 20
+```
+
+### Exercício (Calcular área e perímetro)
+
+```js
+const base = 5;
+const altura = 8;
+const area = base * altura;
+const perimetro = base + base + altura + altura
+console.log(area, perimetro)
+```
+
+## Operadores de Comparação
+
+- Igualdade solta: ==  (compara valores, ignora o tipo)
+- Igualdade estrita === (compara valores e tipos)
+- Diferente != ou !===
+- Maior: >
+- Maior ou Igual: >=
+- Menor: <
+- Menor ou Igual: <=
+
+Exemplo:
+
+```js
+const a = 10;
+const b = 20;
+console.log(a == b);  // false
+console.log(a === 10); // true
+console.log(a > b); // false
+console.log(a < b); // true
+console.log(a != b); // true
+console.log(a !== 10); // false
+```
+
+## Operadores Lógicos
+
+- E lógico: && (true se os dois forem true)
+- OU lógico: || (true se pelo menos um for true)
+- Não lógico: ! (inverte o valor)
+
+```js
+const age = 18;
+const temCarteira = true;
+
+if (age > 18 && temCarteira == true) {
+    console.log("Apto à dirigir")
+} else if (age < 18 || !temCarteira) {
+    console.log("Inapto à dirigir")
+}
+```
+
+## ARRAYS
+
+São listas que podem armazenar múltiplos valores em uma única variável
+
+Exemplo:
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+const frutas = [banana, maçã, abacaxi];
+const dadosDiversos = ["Pedro", 23, true, ["JavaScript", "Python", "Golang"]]
+```
+
+### Acessando Elementos dos Arrays
+
+```js
+const cores = ["red", "green", 'blue']
+```
+
+Acessando por índice (sempre começa em 0)
+
+```js
+console.log(cores[0]);
+console.log(cores[1]);
+console.log(cores[2]);
+```
+
+Printando a quantidade de elementos
+
+```js
+console.log(cores.length); // 3
+```
+
+### Manipulando Arrays
+
+```js
+const fruits = ['orange', 'grape', 'lemon'];
+```
+
+Adicionando elementos
+
+```js
+frutas.push('apple'); //adiciona elemento no final da lista
+fruits.unshift('strawberry'); // adiciona elemento no começo da lista
+
+console.log(fruits) // Irá printar ['apple', 'orange', 'grape', 'lemon', 'strawberry']
+```
+
+Removendo Elementos
+
+```js
+fruits.pop(); // Remove o último elemento da lista
+fruits.shift(); // Remove o primeiro elemento da lista
+
+console.log(fruits); // Irá printar ['orange', 'grape', 'lemon']
+```
+
+Alterando Elementos
+
+```js
+fruits[0] = 'blueberry' // Irá alterar orange por blueberry
+console.log(fruits); // ['blueberry', 'grape', 'lemon']
+```
+
+## Objetos em JavaScript
+
+São estruturas que permitem armazenar informações (dados) e comportamentos (funções). Sendo importantes para:
+
+- Organização: agrupam dados relacionados, mantendi seu código mais fácil de entender
+- Reutilização: facilitam a reutilização de código e dados em diferentes áreas do programa
+- Representação intuitiva: modelam entidades do mundo real de forma intuituva (pessoas, contas, produtos, etc)
+- Flexibilidade: podem ser criados, modificados e expandidos dinamicamente durante a execução do programa
+- Base para POO: são fundamentais para a Programação Orientada a Objetos
+
+Quando usar Objetos? Useo-os quando precisar:
+
+- Agrupar características relacionadas de uma entidade (ex: dados de uma pessoa)
+- Organizar informações complexas com estrutura hierárquica
+- Passar múltiplos valores como um único argumento para funções
+- Armazenar dados que precisam ser acessados por nomes (chaves) em vez de índices numéricos
+- Implementar registros ou estruturas de dados personalizados
+- Representar conceitos de domínio da aplicação (clientes, produtos, pedidos, etc)
+
+### Criando e Acessando Objetos
+
+Em JavaScript, um objeto é criado usando chaves {} e consiste em palavras de chave-valor, onde as chaves são strings ou identificadores e os valores podem ser quaisquer tipos de dados.
+
+Exemplo:
+
+```js
+const pessoa = {
+    nome: 'Pedro',
+    idade: 23,
+    altura: 1.75,
+};
+
+// Acessando propriedades de um objeto
+console.log(pessoa.nome) // Pedro
+console.log(pessoa.idade) // 23
+console.log(pessoa.altura) // 1.75
+```
+
+Existem duas maneiras de acessarmos propriedades:
+
+1. Notação de ponto (objeto.propriedade): Mais limpa e direta quando você conhece o nome da proproiedade
+2. Notação em colchetes (objeto.['propriedade']): Útil quando o nome da propriedade está em uma variável ou contém caracteres especiais
+
+### Objetos Aninhados (Nested Objects)
+
+Objetos podem conter outros objetos como valores, criando estruturas hierarquicas de dados
+
+Exemplo:
+
+```js
+// Objeto com outro objeto dentro
+const account = {
+    agency: '0975',
+    bank: {
+        cod: 2128 - 8,
+        id: 23,
+        title: 'TyreBank',
+    },
+};
+
+// Acessando objetos aninhados
+
+console.log(account.bank)  // { cod: '2128-8', id: 23, name: 'TrybeBank' }
+console.log(account['bank']); // { cod: '2128-8', id: 23, name: 'TrybeBank' }
+console.log(bank); // { cod: '2128-8', id: 23, name: 'TrybeBank' }
+```
+
+### Objetos com múltiplos níveis
+
+Podemos ter vários níveis de aninhamento para representar estruturas de dados complexas
+
+Exemplo:
+
+```js
+const user = {
+    id: 99,
+    email: 'jakeperalta@gmail.com',
+    info: {
+        name: 'Jake',
+        lastName: 'Peralta',
+        address: {
+            street: 'Rua Dalvo Trombeta, 357 - Fundos',
+            district: 'Xererê',
+            city: 'Santana do Livramento',
+            state: 'Rio Grande do Norte',
+        },
+    },
+};
+
+// Diferentes formas de acessar as propriedades
+
+console.log(user['id']); // 99
+console.log(user.email); // jakeperalta@gmail.com
+console.log(user.info.address.street); // Rua Dalvo Trombeta, 357 - Fundos
+console.log(user['info']['address']['city']); // Santana do Livramento
+```
+
+### Objetos dentro de Arrays
+
+Arrays podem conter objetos, permitindo armazenar coleções de entidades semelhantes
+
+Exemplo:
+
+```js
+const residents = [
+    {
+        name: 'Luíza',
+        lastName: 'Guimarães',
+        floor: 10,
+        apartment: 1005,
+    },
+    {
+        name: 'William',
+        lastName: 'Albuquerque',
+        floor: 5,
+        apartment: 502,
+    },
+    {
+        name: 'Murilo',
+        lastName: 'Ferraz',
+        floor: 8,
+        apartment: 804,
+    },
+    {
+        name: 'Zoey',
+        lastName: 'Brooks',
+        floor: 1,
+        apartment: 101,
+    },
+];
+
+// Acessando objetos no array
+// Primeiro elemento:
+firstElement = residents[0];
+console.log(residents[0]);  // { name: 'Luíza', lastName: 'Guimarães', floor: 10, apartment: 1005 }
+
+// Último elemento:
+lastElement = residents[residents.length - 1];
+console.log(residents[residents.length - 1]);  // { name: 'Zoey', lastName: 'Brooks', floor: 1, apartment: 101 }
+
+// Iterando sobre array de objetos
+for (let index = 0; index < residents.length; index++) {
+    const element = residents[index];
+    console.log(element);
+}
+```
+
+Arrays de objetos são ideiais para:
+
+- Lista de usuários, produtos ou entidades similares
+- Dados tabulares como resultados de consultas bancos de dados
+- Coleções de itens com propriedades consistentes
+
+## Clean Code / Boa Prática
+
+São formas de escrever código de forma organizada e uniformizada
+
+### Adicionando e Alterando Dados
+
+Objetos em JS são dinâmicos, propriedades podem ser adicionadas, modificadas ou removidas a qualquer momento
+
+Exemplo:
+
+```js
+const customer = {
+    firstName: 'Roberto',
+    age: 22,
+    job: 'Software Engineer',
+};
+
+// Adicionando propriedade com notação de ponto
+customer.lastName = 'Faria'
+console.log(customer);  // { firstName: 'Roberto', age: 22, job: 'Software Engineer', lastName: 'Faria' }
+
+// Alterando propriedade com notação de colchetes
+customer['lastName'] = 'Silva';
+console.log(customer);  // { firstName: 'Roberto', age: 22, job: 'Software Engineer', lastName: 'Silva' }
+```
+
+### Adicionando Propriedades Através de Função
+
+Podemos criar funções utilitárias para modificar objetos de forma consistente
+
+Exemplo:
+
+```js
+const customer = {
+    firstName: 'Roberto',
+    age: 22,
+    job: 'Software Engineer',
+    // birthPlace: '', // A propriedade que será adicionada não precisa estar comentada
+};
+
+// Criação da função
+const addProperty = (object, key, value) => {
+    if (typeof object[key] === "undefined") {
+        object[key] = value;
+    }
+};
+
+// Chamada da função passando os valores dos parâmetros
+addProperty(customer, 'birthPlace', '19/07/1932');
+
+// Exibe o objeto transformado
+console.log(customer);  // { firstName: 'Roberto', age: 22, job: 'Software Engineer', birthPlace: '19/07/1932' }
+```
+
+Funções como esta são úteis quando:
+
+- Precisamos aplicar a mesma lógica para modificar vários objetos
+- Queremos validações antes de adicionar propriedades
+- Estamos encapsulando a lógica de modificação para tornar o código mais limpo
+
+## TIPOS DE DADOS E MÉTODOS ÚTEIS
+
+### Tipos de dados (String)
+
+Strings: representam qualquer sequência de caracteres, sempre em aspas
+
+Métodos úteis para strings:
+
+- .length: retorna o tamanho da string
+- .toUpperCase(): transforma tudo em maiúsculo
+- .toLowerCase(): transforma tudo em minúsculo
+- .includes(): verifica se contém uma palavra dentro da string
+- .replace(): substitui um trecho do texto
+- .slice(): recorta parte da string
+
+Exemplo:
+
+```js
+const frase = 'Aprender JavaScript é divertido'
+console.log(frase.length); // 31
+console.log(frase.toUpperCase()); // APRENDER JAVASCRIPT É DIVERTIDO!
+console.log(frase.includes("JavaScript")); // true
+console.log(frase.replace("divertido", "poderoso")); // Aprender JavaScript é poderoso!
+```
+
+### Tipos de dados (Number)
+
+Numbers: representam números inteiros ou decimais
+
+Métodos úteis para numbers:
+
+- .toFixed(): define o número de casas decimais
+- .toString(): converte o número para texto
+- parseInt(): converte uma string para número inteiro
+- parseFloat(): converte uma string para número decimal
+- isNaN(): verifica se o valor não é um numero
+
+```js
+const valor = 10.56789;
+
+console.log(valor.toFixed(2)); // 10.57
+console.log(typeof valor.toString()); // string
+console.log(parseInt("123")); // 123
+console.log(parseFloat("10.5")); // 10.5
+console.log(isNaN("abc")); // true
+```
+
+### Tipos de dados (Boolean)
+
+Booleans: usados para representar valores lógicos
+
+Booleans em si não possuem métodos próprios, mas são muito usados em condições, exemplo:
+
+```js
+if (true) {
+  console.log("Isso sempre acontece");
+}
+```
+
+### Tipos de dados (Arrays)
+
+Arrays: são estruturas que armazenam vários valores em uma única variável
+
+Métodos úteis para Arrays:
+
+- .push(): adiciona um item no final
+- .pop(): remove o último item
+- .shift(): remove o primeiro item
+- .unshift(): adiciona item no início
+- .includes(): verifica se um item existe na lista
+- .indexOf(): retorna a posição de um item
+- .length: quantos itens existem no array
+- .join(): junta os itens em uma string
+- .slice(): cria uma cópia parcial do array
+- .splice(): remove ou substitui itens
+
+Exemplo:
+
+```js
+const itens = ["copo", "prato", "garfo"];
+
+itens.push("faca"); // ["copo", "prato", "garfo", "faca"]
+console.log(itens.length); // 4
+console.log(itens.includes("garfo")); // true
+console.log(itens.indexOf("prato")); // 1
+```
+
+### Tipos de dado (Objetos)
+
+Objetos: são usados para representar uma estrutura com propriedades nomeadas
+
+Métodos úteis para objetos:
+
+- objeto.chave: acessa o valor diretamente
+- objeto["chave"]: outra forma de acessar a propriedade
+- Object.keys(): retorna todas as chaves
+- Object.values(): retorna todos os valores
+- Object.entries(): retorna chaves e valores em pares
+
+Exemplo:
+
+```js
+const pessoa = {
+  nome: "Alberto",
+  idade: 28,
+  cidade: "Iúna"
+};
+
+console.log(pessoa.nome); // Alberto
+console.log(Object.keys(pessoa));   // ["nome", "idade", "cidade"]
+console.log(Object.values(pessoa)); // ["Alberto", 28, "Iúna"]
+```
+
+## DATAS E HORAS
+
+### Tipo Date
+
+JS possui um tipo chamado date usado para representar:
+
+- Segundos
+- Minutos
+- Horas
+- Dias
+- Meses
+- Anos
+
+Para criar uma nova data, usamos:
+
+```js
+const agora = new Date();
+console.log(agora); // Cria um objeto com a data e hora atual do sistema
+```
+
+### Data Específica
+
+Como criar:
+
+```js
+const natal = new Date(2024, 11, 25); // Ano, MÊS (começa do zero), Dia
+console.log(natal);
+```
+
+OBS: Sempre lembrar que Janeiro em JS é o mês 0
+
+Porquê usar Datas?
+
+- Para exibir o dia e hora atual
+- Para calcular diferenças de tmepo (dias restantes, prazos e contagens regressivas)
+- Para formatar mensagens com o dia da semana ou hora
+- Para agendar algo em sistemas de agendda, relatórios, logs
+
+Métodos mais usados com datas:
+
+- getFullYear(): retorna o ano com 4 dígitos (ex: 2025)
+- getMonth(): retorna o mês (0 a 11)
+- getDate(): retorna o dia do mês (1 a 31)
+- getDay(): dia da semana (0 = domingo, 6 = sábado)
+- getHours(): hora atual (0 a 23)
+- getMinutes(): minutos atuais
+- getSeconds(): segundos atuais
+- toLocaleDateString(): retorna a data formatada para o idioma
+- toLocaleTimeString(): retorna a hora formatada para o idioma
+
+## Função
+
+Bloco de código que se repete
+
+Exemplo (Média de Notas)
+
+```js
+function calcularMedia (nota1, nota2) {
+    console.log((nota1 + nota2) / 2)
+}
+calcularMedia(5, 7)
+calcularMedia(3, 8)
+```
+
+Outra forma de escrever uma função
+
+```js
+const calcMedia = (nota1, nota2) => {
+    console.log((nota1 + nota2) / 2)
+}
+```
+
+Arrow Function
+
+```js
+() => {
+
+}
+```
+
+Funcion
+
+```js
+function x () {
+
+}
+```
+
+### Método Map
+
+O método map é um método para se utilizar com tipos de dados arrays que vai te retornar um novo array
+
+Exemplo:
+
+```js
+[2, 5, 10, 12, 20, 50, 100].map((numero) => {numero * 2}) // Faz um novo array com os números multiplicados por 2
+```
+
+### Método Filtro
+
+Este método filtra os diferentes valores dentro do array por um parâmetro que será criado por mim
+
+Exemplo:
+
+```js
+[2, 5, 10, 12, 20, 50, 100].filter((numero) => {numero < 50}) // Irá filtrar os números menores que 50
+```
+
+### Método Reduce
+
+Este método recebe uma lista e a reduz a um número dependendo do parâmetro determinado
+
+Exemplo:
+
+```js
+[1000, 500, 3000, 15000, 475].reduce((a, b) => a + b, 0) // Este reduce irá fazer o a passar pela lista e o b ser a acumulação dos valores conforme o a for lendo a lista. e também, o valor depois da vírgula do b é o valor dele
+```
+
+OBS: As pessoas não usam as chaves após o arrow da arrow function, então será melhor não usar também
+
+## ARRAYS E LOOPS
+
+O que são Loops? Laços de repetição são estruturas que permitem executar um bloco de código várias vezes e de forma automática, evitando a repetição do código manualmente e tornando-o mais limpo e eficiente
+
+Porque usar loops?
+
+- Automatizam tarefas repetitivas
+- Facilitam o processamento de listas e coleções
+- Tornam o código mais enxuto e fácil de manter
+
+Exemplo simples (contagem de 1 a 10):
+
+```js
+for (let i = 1; i <= 10; i++) {
+    console.log(i)
+}
+```
+
+## TIPOS DE LOOPS
+
+### Loop FOR
+
+Estrutura mais tradicional de repetições controladas
+
+Ideal para quando você sabe o número de repetições
+
+Exemplo:
+
+```js
+for (let index = 0; index < array.length; index++) {
+    //código a ser repetido
+}
+```
+
+### Loop FOR OF
+
+Percorre valores de arrays, strings e coleções iteráveis
+
+Simples para acessar cada elemento
+
+Exemplo:
+
+```js
+const frutas = ['abacaxi', 'uva', 'banana']
+for (const fruta of frutas) { // fruta é o nome que foi dado para os itens dentro do array, poderia ser nomeado qualquer coisa
+    console.log(frutas) // irá imprimir [abacaxi, uva, banana]
+}
+```
+
+### Loop FOR IN
+
+Percorre chaves '{}' (índices ou propriedades) de objetos e arrays
+
+Útil para objetos
+
+Exemplo:
+
+```js
+const pessoa = { 
+    nome: 'Pedro',
+    idade: 23
+};
+for (const chave in pessoa) {
+   console.log(chave)
+}
+```
+
+## Função Simples
+
+```js
+function somar(a, b) {
+    return (a + b)
+} // Aqui é a declaração da função, como tem retorno os valores da soma serão guardados. Se tivesse 2 console.logs iria imprimir o resultado das instâncias x e y, mas nos outros 3 consoles ali embaixo iria imprimir undefined pois não tem return na função então o programa não guarda os valores nas variáveis
+
+const x = somar (4, 5)
+const y = somar (10,20) // Aqui foi o instânciamento da função
+
+console.log(x) 
+console.log(x)
+console.log(y) // Aqui foi a impressão da instância
+```
+
+## FUNÇÕES
+
+Funções são um dos conceitos mais importantes na programação, elas permitem organizarmos o código, evitando repetições e resolvendo problemas de forma mais clara e eficiente.
+
+Uma função é um bloco de código que executa uma tarefa específica. E é só chamar / executar a função toda vez que precisar daquela tarefa
+
+Porque usamos as funções?
+
+- Reutilização: escreva uma vez, use quantas quiser
+- Organização: deixa o código mais limpo e dividido em partes menores
+- Facilidade de Manutenção: Se precisar mudar algo, muda só a função
+
+Estrutura básica de uma função
+
+```js
+function nomeDaFuncao() {
+    // código a ser executado
+}
+```
+
+Exemplo simples
+
+```js
+function mostrarMensagem() {
+    console.log("Bem-vindo ao curso de JavaScript!");
+}
+
+mostrarMensagem(); // Saída: Bem-vindo ao curso de JavaScript!
+```
+
+### Exercício de fixação
+
+Crie uma função chamada apresentar que mostre no console: "Olá, eu sou estudante de JavaScript!"
+
+```js
+function ola() {
+    console.log('Olá, eu sou estudante de JavaScript!')
+}
+```
+
+### Parâmetros e retorno
+
+Funções recebem valores (parâmetros) e devolvem resultados (retornos)
+
+```js
+function somar(a, b) {
+    return a + b;
+}
+
+let resultado = somar(3, 5);
+console.log(resultado); // Saída: 8
+```
+
+Exercício de fixação: Crie uma função chamada dobrar que receba um número e retorne o dobro desse número.
+
+```js
+function dobrar(a) {
+    console.log(a * 2)
+}
+dobrar(8)
+```
+
+## TIPOS DE FUNÇÕES
+
+### Funções Simples (sem parâmetros)
+
+Executa uma tarefa fixa e não recebe informações externas
+
+```js
+function mostrarOla() {
+    console.log("Olá!");
+}
+
+mostrarOla(); // Saída: Olá!
+```
+
+### Funções com parâmetros
+
+Recebe valores externos para trabalhar, tornando-a mais flexível
+
+```js
+function cumprimentar(nome) {
+    console.log(`Olá, ${nome}!`);
+}
+
+cumprimentar("Maria"); // Saída: Olá, Maria!
+cumprimentar("João"); // Saída: Olá, João!
+```
+
+### Funções com retorno
+
+Devolve um valor para quem chamou, permitindo usar o resultado em outros lugares
+
+```js
+function multiplicar(a, b) {
+    return a * b;
+}
+
+let produto = multiplicar(4, 5);
+console.log(produto); // Saída: 20
+```
+
+Exercício de fixação:
+
+Crie uma função chamada subtrair que receba dois números e retorne a subtração do primeiro pelo segundo.
+
+```js
+function subtrair(a, b) {
+    console.log(a - b)
+}
+subtrair(7, 5)
+```
+
+Crie uma função chamada apresentarPessoa que receba nome e idade e mostre: "Nome: X, Idade: Y anos".
+
+```js
+function apresentar(x, y) {
+    console.log('Nome:', x, '/ Idade:', y)
+}
+apresentar('Pedro', 23)
+```
+
+### Funções em Arrays
+
+Usamos funções em arrays para: mostrar, buscar, filtrar, transformar, etc
+
+Exemplo 1: Mostrando nomes
+
+```js
+const nomes = ["Ana", "Bruno", "Carlos", "Daniela"];
+function mostrarNomes(lista) {
+    for (let i = 0; i < lista.length; i++) {
+        console.log(lista[i])
+    }
+}
+mostrarNomes(nomes);
+```
+
+Exemplo 2: procurando um elemento
+
+```js
+const nomes = ["Ana", "Bruno", "Carlos", "Daniela"];
+function contemNome(lista, nome) {
+    return lista.includes(nome);
+}
+console.log(contemNome(nomes, 'Carlos'))
+```
+
+Exemplo 3: filtrar elementos
+
+```js
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+function filtrarPares(array) {
+    return array.filter((num) => num % 2 === 0)
+}
+console.log(filtrarPares(numeros));
+```
+
+### Funções aninhadas (Funções dentro de funções)
+
+Funções aninhadas são funções declaradas dentro de outras funções. Elas podem acessar variáveis da função 'pai' e são úteis para organizar tarefas relacionadas
+
+Analogia: Pense em uma função aninhada como um ajudante dentro de uma loja: o gerente (função principal) pode pedir para o ajudante (função interna) fazer tarefas específicas
+
+Exemplo:
+
+```js
+function calcularPrecoFinal(preco, percentualDesconto) {
+    function calcularDesconto(valor, percentual) {
+        return valor * (percentual / 100)
+    }
+    const desconto = calcularDesconto(preco, percentualDesconto)
+    return preco - desconto;
+}
+console.log(calcularPrecoFinal(200, 15));
+```
+
+Escopo:
+
+- Funções internas só existem dentro da função onde foram criadas
+- Podem acessar variáveis da função externa / pai
+- Não são visíveis fora da função pai
+
+### Método Split
+
+É um método para textos (strings), que recorta o que eu definir para ele cortar e retorna as palavras recortadas dentro de um array.
+
+Exemplo:
+
+```js
+let textoLimpo = ('Oi meu nome é Pedro')
+
+console.log(textoLimpo.split(' ').length) // Pedi para ele recortar os espaços vazios do textoLimpo, aí ele transformou esse texto em [ 'Oi', 'meu', 'nome', 'é', 'Pedro' ], em seguida o .length contou quantos elementos tem no array criado (5)
+
+textoLimpo.split(' ').length;
+```
+
+## CLASSES
+
+Introdução: as classes em JS foram introduzidas no ECMAScript 2015 e trouxeram uma forma mais clara e orientada a objetos para criar e trabalhar com objetos. Embora o JS seja fundamentalmente baseado em protótipos, as classes oferecem uma sintaxe mais familiar para programadores vindos de outras linguagens orientadas a objetos.
+
+### O que são Classes?
+
+Uma classe em JS é um template para criar objetos. Ela encapsula dados e comportamentos que definem um tipo de objeto. Em outras palavras, uma classe não é o objeto em si, mas sim uma forma de criar objetos
+
+### Sintaxe básica
+
+Para declarar uma classe, usamos a palavra-chave reservada 'class' seguida pelo nome da classe. Por convenção, os nomes de classes começam com letra maiúscula.
+
+```js
+class NomeDaClasse {
+    constructor() {
+
+        //Inicialização de propriedades
+
+    }
+
+    //Método da classe
+
+}
+```
+
+### O Constructor
+
+Este método 'constructor()' é um método especial dentro de uma classe:
+
+- É executado automaticamente quando uma nova instância de classe é criada
+- É usado para inicializar as propriedades do objeto
+- Se você não definir um constructor, o JavaScript adicionará um constructor vazio automaticamente
+- Dentro do constructor, a palavra chave 'this' se refere à instância que esta sendo criada
+
+Criando uma Classe simples para representar um usuário
+
+```js
+class Usuario {
+    constructor(name, email) {
+        this.name = name;
+        this.email = email;
+    }
+}
+```
+
+No exemplo acima, definimos uma classe 'Usuario' com duas propriedades: 'name' e 'email'.
+
+### Instanciando Objetos
+
+Para criar um objeto a partir de uma classe, usamos o operador new
+
+```js
+const alberto = new Usuario("Alberto", "albertodev@email.com")
+const lebron = new Usuario("Lebron James", "lakers@email.com");
+
+console.log(alberto); // Usuario { name: 'Alberto', email: 'albertodev@email.com' }
+console.log(lebron);  // Usuario { name: 'Lebron James', email: 'lakers@email.com' }
+
+// Acessando propriedades específicas
+console.log(alberto.email); // albertodev@email.com
+```
+
+Quando usamos o `new Usuario()`, estamos:
+
+- Criando um objeto vazio
+- Vinculando this a esse objeto
+- Executando o código do constructor com os argumentos fornecidos
+- Retornando o objeto criado
+
+### Método de Class
+
+Os métodos são funções definidas dentro de uma classe que representam comportamentos que os objetos daquela classe podem executar
+
+Sintaxe para definir métodos
+
+```js
+class ClassName {
+    constructor() {
+        // Inicialização
+    }
+
+    metodo1() {
+        // Código do método 1
+    }
+
+    metodo2() {
+        // Código do método 2
+    }
+}
+```
+
+Exemplo com métodos
+
+```js
+class User {
+    constructor(name, email, anoNascimento) {
+        this.name = name;
+        this.email = email;
+        this.anoNascimento = anoNascimento;
+    }
+
+    // Método para calcular a idade do usuário
+    calcularIdade() {
+        const anoAtual = new Date().getFullYear();
+        return anoAtual - this.anoNascimento;
+    }
+
+    // Método para retornar informações do usuário
+    getInfo() {
+        return {
+            nome: this.name,
+            email: this.email,
+            idade: this.calcularIdade()
+        };
+    }
+}
+
+// Criando instâncias
+const marcelo = new User("Marcelo J.", "marcelo@email.com", 1998);
+const maria = new User("Maria A.", "maria@email.com", 2010);
+
+// Chamando métodos
+console.log(marcelo.calcularIdade()); // 27 (em 2025)
+console.log(maria.getInfo());
+// { nome: 'Maria A.', email: 'maria@email.com', idade: 15 }
+```
+
+### Recursos Avançados de Classes
+
+#### Herança
+
+O que é: a herança é um mecanismo pelo qual uma classe pode herdar propriedades e métodos de outra classe
+
+> Seção em andamento no Notes.js — conteúdo ainda incompleto.

@@ -382,7 +382,7 @@ console.log(isNaN("abc")); // true
 // Booleans em si não possuem métodos próprios, mas são muito usados em condições, exemplo:
 
 if (true) {
-  console.log("Isso sempre acontece");
+    console.log("Isso sempre acontece");
 }
 
 // Tipos de dados (Arrays)
@@ -418,9 +418,9 @@ console.log(itens.indexOf("prato")); // 1
 // Exemplo: 
 
 const pessoa = {
-  nome: "Alberto",
-  idade: 28,
-  cidade: "Iúna"
+    nome: "Alberto",
+    idade: 28,
+    cidade: "Iúna"
 };
 
 console.log(pessoa.nome); // Alberto
@@ -469,7 +469,7 @@ console.log(natal);
 // Bloco de código que ser repete
 // Exemplo (Média de Notas)
 
-function calcularMedia (nota1, nota2) {
+function calcularMedia(nota1, nota2) {
     console.log((nota1 + nota2) / 2)
 }
 calcularMedia(5, 7)
@@ -487,7 +487,7 @@ const calcMedia = (nota1, nota2) => {
 }
 
 // Funcion
-function x () {
+function x() {
 
 }
 
@@ -495,13 +495,13 @@ function x () {
 // O método map é um método para se utilizar com tipos de dados arrays que vai te retornar um novo array
 // Exemplo:
 
-[2, 5, 10, 12, 20, 50, 100].map((numero) => {numero * 2}) // Faz um novo array com os números multiplicados por 2
+[2, 5, 10, 12, 20, 50, 100].map((numero) => { numero * 2 }) // Faz um novo array com os números multiplicados por 2
 
 // Método Filtro
 // Este método filtra os diferentes valores dentro do array por um parâmetro que será criado por mim
 // Exemplo:
 
-[2, 5, 10, 12, 20, 50, 100].filter((numero) => {numero < 50}) // Irá filtrar os números menores que 50
+[2, 5, 10, 12, 20, 50, 100].filter((numero) => { numero < 50 }) // Irá filtrar os números menores que 50
 
 // Método Reduce
 // Este método recebe uma lista e a reduz a um número dependendo do parâmetro determinado
@@ -549,12 +549,12 @@ for (const fruta of frutas) { // fruta é o nome que foi dado para os itens dent
 // Útil para objetos
 // Exemplo:
 
-const pessoa = { 
+const pessoa = {
     nome: 'Pedro',
     idade: 23
 };
 for (const chave in pessoa) {
-   console.log(chave)
+    console.log(chave)
 }
 
 // Função Simples
@@ -562,9 +562,276 @@ for (const chave in pessoa) {
 function somar(a, b) {
     return (a + b)
 } // Linhas 562 a 564 são a declaração da função, como tem retorno os valores da soma serão guardados. Aqui se tivesse 2 console.logs iria imprimir o resultado das instãncias x e y, mas lá em baixo nos outros 3 consoles iria imprimir undefined pois não tem return na função então o programa não guarda os valores nas variáveis
-const x = somar (4, 5)
-const y = somar (10,20) // Linhas 565 e 566 foi o instânciamento da função
+const x = somar(4, 5)
+const y = somar(10, 20) // Linhas 565 e 566 foi o instânciamento da função
 
-console.log(x) 
+console.log(x)
 console.log(x)
 console.log(y) // Linhas 568 a 570 foi a impressão da instância
+
+// FUNÇÕES 
+// Funções são um dos conceitos mais importantes na programação, elas permitem organizarmos o código, evitando repetições e resolvendo problemas de forma mais clara e eficiente.
+// Uma função é um bloco de código que executa uma tarefa específica. E é só chamar / executar a função toda vez que precisar daquela tarefa
+// Porque usamos as funções?
+// Reutilização: escreva uma vez, use quantas quiser
+// Organização: deixa o código mais limpo e dividido em partes menores
+// Facilidade de Manutenção: Se precisar mudar algo, muda só a função
+// Estrutura básica de uma função
+
+function nomeDaFuncao() {
+    // código a ser executado
+}
+
+// Exemplo simples
+
+function mostrarMensagem() {
+    console.log("Bem-vindo ao curso de JavaScript!");
+}
+
+mostrarMensagem(); // Saída: Bem-vindo ao curso de JavaScript!
+
+// Exercício de fixação
+// Crie uma função chamada apresentar que mostre no console: "Olá, eu sou estudante de JavaScript!"
+
+function ola() {
+    console.log('Olá, eu sou estudante de JavaScript!')
+}
+
+// Parâmetros e retorno
+// Finções recebem valores (parâmetros) e devolvem resultados (retornos)
+
+function somar(a, b) {
+    return a + b;
+}
+
+let resultado = somar(3, 5);
+console.log(resultado); // Saída: 8
+
+// Exercício de fixação
+// Crie uma função chamada dobrar que receba um número e retorne o dobro desse número.
+
+function dobrar(a) {
+    console.log(a * 2)
+}
+dobrar(8)
+
+// TIPOS DE FUNÇÕES
+// Funções Simples (sem parâmetros)
+// Executa uma tarefa fixa e não recebe informações externas
+
+function mostrarOla() {
+    console.log("Olá!");
+}
+
+mostrarOla(); // Saída: Olá!
+
+// Funções com parâmetros 
+// Recebe valores externos para trabalhar, tornando-a mais flexível
+
+function cumprimentar(nome) {
+    console.log(`Olá, ${nome}!`);
+}
+
+cumprimentar("Maria"); // Saída: Olá, Maria!
+cumprimentar("João"); // Saída: Olá, João!
+
+// Funções com retorno
+// Devolve um valor para quem chamou , permitindo usar o resultado em outros lugares
+
+function multiplicar(a, b) {
+    return a * b;
+}
+
+let produto = multiplicar(4, 5);
+console.log(produto); // Saída: 20
+
+// Exercício de fixação
+
+// Crie uma função chamada subtrair que receba dois números e retorne a subtração do primeiro pelo segundo.
+
+function subtrair(a, b) {
+    console.log(a - b)
+}
+subtrair(7, 5)
+
+// Crie uma função chamada apresentarPessoa que receba nome e idade e mostre: "Nome: X, Idade: Y anos".
+
+function apresentar(x, y) {
+    console.log('Nome:', x, '/ Idade:', y)
+}
+apresentar('Pedro', 23)
+
+// Funções em Arrays
+// Usamos funções em arrays para: mostrar, buscar, filtrar, transformar, etc
+
+// Exemplo 1: Mostrando nomes
+
+const nomes = ["Ana", "Bruno", "Carlos", "Daniela"];
+function mostrarNomes(lista) {
+    for (let i = 0; i < lista.length; i++) {
+        console.log(lista[i])
+    }
+}
+mostrarNomes(nomes);
+
+// Exemplo 2: procurando um elemento
+
+const nomes = ["Ana", "Bruno", "Carlos", "Daniela"];
+function contemNome(lista, nome) {
+    return lista.includes(nome);
+}
+console.log(contemNome(nomes, 'Carlos'))
+
+// Exemplo 3: filtrar elementos
+
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+function filtrarPares(array) {
+    return array.filter((num ) => num % 2 === 0)
+}console.log(filtrarPares(numeros)); 
+
+// Funções aninhadas (Funções dentro de funções)
+
+// Funções aninhadas são funções declaradas dentro de outras funções. Elas podem acessar variáveis da função 'pai'e são úteis paraorganizar tarefas relacionadas
+// Analogia: 
+// Pense em uma função aninhada como um ajudante dentro de uma loja: o gerente (função principal) pode pedir para o ajudante (função interna) fazer tarefas específicas
+// Exemplo:
+
+function calcularPrecoFinal(preco, percentualDesconto) {
+    function calcularDesconto(valor, percentual) {
+        return valor * (percentual / 100)
+    }
+    const desconto = calcularDesconto(preco, percentualDesconto)
+    return preco - desconto;
+}
+console.log(calcularPrecoFinal(200, 15));
+
+// Escopo
+// - Funções internas só existem dentro da função onde foram criadas
+// - Podem acessar variáveis da função externa / pai
+// - Não são visíveis fora da função pai  
+
+// Método Split
+// É um método para textos (strings), que recorta o que eu definir para ele cortar e retorna as palavras recortadas dentro de um array.
+// Exemplo:
+
+let textoLimpo = ('Oi meu nome é Pedro')
+
+console.log(textoLimpo.split(' ').length) // Pedi para ele recortar os espaços vazios do textoLimpo, aí ele transformou esse texto em [ 'Oi', 'meu', 'nome', 'é', 'Pedro' ], em seguida o .length contou quantos elementos tem no array criado (5)
+
+textoLimpo.split(' ').length;
+
+// CLASSES 
+
+//Introdução: as classes em JS foram introduzidas no ECMAScript 2015 e trouxeram uma forma mais clara e orientadaa objetos para criar e trabalhar com objetos. Embora o JS seja fundalmentamente baseado em protótipos, as classes oferecem uma sintaxe mais familiar para programadores vindos de outras linguagens orientadas a objetos.
+
+// O que são Classes? 
+// Uma classe em JS é um template para criar objetos . Ela encapsula dados e comportamentos que definem um tipo de objeto. Em outras palavras, uma classe não é o objeto em si, mas sim uma forma de criar objetos 
+
+// Sintaxe básica 
+// Para declarar uma classe, usamos a palavra-chave reservada 'class' seguida pelo nome da classe. Por convenção, os nomes de classes começam comletra maiúscula.
+
+class NomeDaClasse {
+    constructor() {
+
+        //Inicialização de propriedades 
+
+    }
+
+    //Método da classe
+
+}
+
+// O Constructor
+// Este método 'constructor()' é um método especial dentro de uma classe:
+// - É executado automaticamente quando uma nova instância de classe é criada
+// - É usado para inicializar as propriedades do objeto
+// - Se você não definir um contructor, o JavaScript adicionará um contructor vazio automaticamente
+// - Dentro do constructor, a palavra chave 'this' se refere à instância que esta sendo criada
+
+// Criando uma Classe simples para representar um usuário
+
+class Usuario {
+    constructor(name, email) {
+        this.name = name;
+        this.email = email;
+    }
+}
+
+// No exemplo acima, definimos uma classe 'Usuario' com duas propriedades: 'name' e 'email'. Os parâmetros 
+
+// Instanciando Objetos
+// Para criar umobjeto a partit de uma classe, usamos o operador new
+
+const alberto = new Usuario ("Alberto", "albertodev@email.com")
+const lebron = new Usuario("Lebron James", "lakers@email.com");
+
+console.log(alberto); // Usuario { name: 'Alberto', email: 'albertodev@email.com' }
+console.log(lebron);  // Usuario { name: 'Lebron James', email: 'lakers@email.com' }
+
+// Acessando propriedades específicas
+console.log(alberto.email); // albertodev@email.com
+
+// Quando usamos o new Usuario (), estamos:
+// - Criando um objeto vazio
+// - Vinculando this a esse objeto 
+// - Executando o código do constructor com os argumentos fornecidos
+// - Retornando o objeto criado
+
+// Método de Class
+// Os métodos são funções definidas dentro de uma classe que representam comportamentos que os objetos daquela classe podem executar
+// Sintaxe para definir métodos 
+
+class ClassName {
+    constructor() { 
+        // Inicialização
+    }
+    
+    metodo1() { 
+        // Código do método 1
+    }
+    
+    metodo2() { 
+        // Código do método 2
+    }
+}
+
+// Exemplo com métodos
+
+class User {
+    constructor(name, email, anoNascimento) {
+        this.name = name;
+        this.email = email;
+        this.anoNascimento = anoNascimento;
+    }
+    
+    // Método para calcular a idade do usuário
+    calcularIdade() {
+        const anoAtual = new Date().getFullYear();
+        return anoAtual - this.anoNascimento;
+    }
+    
+    // Método para retornar informações do usuário
+    getInfo() {
+        return {
+            nome: this.name,
+            email: this.email,
+            idade: this.calcularIdade()
+        };
+    }
+}
+
+// Criando instâncias
+const marcelo = new User("Marcelo J.", "marcelo@email.com", 1998);
+const maria = new User("Maria A.", "maria@email.com", 2010);
+
+// Chamando métodos
+console.log(marcelo.calcularIdade()); // 27 (em 2025)
+console.log(maria.getInfo()); 
+// { nome: 'Maria A.', email: 'maria@email.com', idade: 15 }
+
+// Recursos Avançados de Classes
+
+// Herança
+// O que é: 
+// A herança é um mecanismo pelo qual uma classe pode herdar propriedades e métodos de outra classe 

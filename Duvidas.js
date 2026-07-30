@@ -94,3 +94,6 @@ const addProperty = (object, key, value) => {
 // CUIDADO: Strings são imutáveis, ou seja, os métodos não alteram o valor original. Como assim?
 
 console.log(parseFloat("10.5")); // Irá retornar 10.5 Já esta escrito 10.5, não era pra converter string em number? Tipo ten and a half?
+
+// Verifique se todos os alunos de uma turma têm nota maior que 6 (every).
+// Verifique se existe algum produto com preço acima de 100 (some). Não vi isso ainda
